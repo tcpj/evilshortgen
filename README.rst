@@ -10,7 +10,7 @@ Your code without shortgen looks like::
     @tornado.gen.engine
     def get(self):
         value = yield tornado.gen.Task(fetch,
-            arg1='arg1', arg1='arg2'
+            arg1='arg1', arg2='arg2'
         )
         self.write(value)
 
@@ -24,7 +24,7 @@ But with shortgen evil magic::
     @shortgen
     def get(self):
         value << fetch(
-            arg1='arg1', arg1='arg2'
+            arg1='arg1', arg2='arg2'
         )
         self.write(value)
 
@@ -56,7 +56,7 @@ Call new code with decorator::
     @shortgen
     def get(self):
         value << fetch(
-            arg1='arg1', arg1='arg2'
+            arg1='arg1', arg2='arg2'
         )
 
 Known issues
